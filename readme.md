@@ -1,13 +1,13 @@
 # Jira Sample Builder
 
-Generates text from your Titanium project to be pasted into a Jira ticket.
+Generates text from your Titanium project that is ready to be pasted into a Jira ticket.
 
 ## Installation
 
 Not published to NPM. So, install right from GitHub.
 
 ```
-[sudo] npm install -g git://....
+[sudo] npm install -g https://github.com/skypanther/jirasample.git
 ```
 
 ## Usage
