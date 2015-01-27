@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.0.3",
-    "commander": "^2.6.0"
+    "commander": "^2.6.0",
+    "copy-paste": "^1.0.1"
   }
 }

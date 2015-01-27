@@ -1,4 +1,5 @@
 var colors = require('colors'),
+	copypaste = require('copy-paste'),
 	fs = require('fs'),
 	path = require('path');
 var fileOrder = ['alloyjs','apptss','appjs','xml','tss','js'],
@@ -14,7 +15,7 @@ var program = require('commander');
 program
   .version(require('./package.json').version)
   .option('-p, --projpath [path]', 'Path to your project (default: current directory)')
-  .option('-o, --outpath  [path]', 'Path to where to save the results (default: output to console')
+  .option('-o, --outpath  [path]', 'Path to where to save the results (default: copy to clipboard')
   .option('-f, --filename [path]', 'File name in which to save the results (default: project_name_JIRA.txt')
   .option('-v, --version', 'Output the version number')
   .parse(process.argv);
@@ -84,7 +85,8 @@ if(program.filename || program.outpath) {
 	fs.writeFileSync(path.join(outputPath, fileName), finalOutput);
 	console.log('Output saved to ' + path.join(outputPath, fileName));
 } else {
-	console.log(finalOutput);
+	copypaste.copy(finalOutput);
+	console.log("\n App parsed and copied to clipboard. Paste into your ticket's Description field.");
 }
 
 /* -------------------------
